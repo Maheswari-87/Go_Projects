@@ -1,0 +1,305 @@
+{
+    "All":{
+    "confirmed":15930774
+    "recovered":13454880
+    "deaths":184657
+    "country":"India"
+    "population":1339180127
+    "sq_km_area":3287263
+    "life_expectancy":"62.5"
+    "elevation_in_meters":160
+    "continent":"Asia"
+    "abbreviation":"IN"
+    "location":"Southern and Central Asia"
+    "iso":356
+    "capital_city":"New Delhi"
+    }
+    "Andaman and Nicobar Islands":{
+    "lat":"11.225999"
+    "long":"92.968178"
+    "confirmed":5490
+    "recovered":5276
+    "deaths":64
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Andhra Pradesh":{
+    "lat":"15.9129"
+    "long":"79.74"
+    "confirmed":986703
+    "recovered":918985
+    "deaths":7510
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Arunachal Pradesh":{
+    "lat":"27.768456"
+    "long":"96.384277"
+    "confirmed":17186
+    "recovered":16851
+    "deaths":56
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Assam":{
+    "lat":"26.357149"
+    "long":"92.830441"
+    "confirmed":229138
+    "recovered":217593
+    "deaths":1150
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Bihar":{
+    "lat":"25.679658"
+    "long":"85.60484"
+    "confirmed":354281
+    "recovered":288637
+    "deaths":1897
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Chandigarh":{
+    "lat":"30.733839"
+    "long":"76.768278"
+    "confirmed":35770
+    "recovered":31222
+    "deaths":423
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Chhattisgarh":{
+    "lat":"21.264705"
+    "long":"82.035366"
+    "confirmed":588818
+    "recovered":459600
+    "deaths":6467
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Dadra and Nagar Haveli and Daman and Diu":{
+    "lat":"20.194742"
+    "long":"73.080901"
+    "confirmed":5672
+    "recovered":4150
+    "deaths":4
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Delhi":{
+    "lat":"28.646519"
+    "long":"77.10898"
+    "confirmed":930179
+    "recovered":831928
+    "deaths":12887
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Goa":{
+    "lat":"15.359682"
+    "long":"74.057396"
+    "confirmed":70814
+    "recovered":60571
+    "deaths":943
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Gujarat":{
+    "lat":"22.694884"
+    "long":"71.590923"
+    "confirmed":440731
+    "recovered":350865
+    "deaths":5740
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Haryana":{
+    "lat":"29.20004"
+    "long":"76.332824"
+    "confirmed":381247
+    "recovered":322297
+    "deaths":3528
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Himachal Pradesh":{
+    "lat":"31.927213"
+    "long":"77.233081"
+    "confirmed":81102
+    "recovered":69073
+    "deaths":1236
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Jammu and Kashmir":{
+    "lat":"33.75943"
+    "long":"76.612638"
+    "confirmed":152442
+    "recovered":135430
+    "deaths":2084
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Jharkhand":{
+    "lat":"23.654536"
+    "long":"85.557631"
+    "confirmed":177356
+    "recovered":139921
+    "deaths":1609
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Karnataka":{
+    "lat":"14.70518"
+    "long":"76.166436"
+    "confirmed":1222202
+    "recovered":1032233
+    "deaths":13762
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Kerala":{
+    "lat":"10.450898"
+    "long":"76.405749"
+    "confirmed":1295059
+    "recovered":1154102
+    "deaths":5000
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Ladakh":{
+    "lat":"34.1526"
+    "long":"77.5771"
+    "confirmed":12739
+    "recovered":10630
+    "deaths":134
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Lakshadweep":{
+    "lat":"13.6999972"
+    "long":"72.1833326"
+    "confirmed":1335
+    "recovered":833
+    "deaths":1
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Madhya Pradesh":{
+    "lat":"23.541513"
+    "long":"78.289633"
+    "confirmed":446811
+    "recovered":359755
+    "deaths":4788
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Maharashtra":{
+    "lat":"19.449759"
+    "long":"76.108221"
+    "confirmed":4027827
+    "recovered":3268449
+    "deaths":61911
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Manipur":{
+    "lat":"24.738975"
+    "long":"93.882541"
+    "confirmed":29961
+    "recovered":29128
+    "deaths":380
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Meghalaya":{
+    "lat":"25.536934"
+    "long":"91.278882"
+    "confirmed":15308
+    "recovered":14130
+    "deaths":157
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Mizoram":{
+    "lat":"23.309381"
+    "long":"92.83822"
+    "confirmed":5158
+    "recovered":4576
+    "deaths":12
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Nagaland":{
+    "lat":"26.06702"
+    "long":"94.470302"
+    "confirmed":12747
+    "recovered":12306
+    "deaths":94
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Odisha":{
+    "lat":"20.505428"
+    "long":"84.418059"
+    "confirmed":382315
+    "recovered":351386
+    "deaths":1958
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Puducherry":{
+    "lat":"11.882658"
+    "long":"78.86498"
+    "confirmed":49593
+    "recovered":43467
+    "deaths":722
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Punjab":{
+    "lat":"30.841465"
+    "long":"75.40879"
+    "confirmed":314269
+    "recovered":267289
+    "deaths":8114
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Rajasthan":{
+    "lat":"26.583423"
+    "long":"73.847973"
+    "confirmed":453407
+    "recovered":353711
+    "deaths":3330
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Sikkim":{
+    "lat":"27.571671"
+    "long":"88.472712"
+    "confirmed":6846
+    "recovered":6174
+    "deaths":136
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Tamil Nadu":{
+    "lat":"11.006091"
+    "long":"78.400624"
+    "confirmed":1025059
+    "recovered":927440
+    "deaths":13258
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Telangana":{
+    "lat":"18.1124"
+    "long":"79.0193"
+    "confirmed":373468
+    "recovered":321788
+    "deaths":1899
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Tripura":{
+    "lat":"23.746783"
+    "long":"91.743565"
+    "confirmed":34262
+    "recovered":33268
+    "deaths":394
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Uttar Pradesh":{
+    "lat":"26.925425"
+    "long":"80.560982"
+    "confirmed":942511
+    "recovered":689900
+    "deaths":10346
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "Uttarakhand":{
+    "lat":"30.156447"
+    "long":"79.197608"
+    "confirmed":134012
+    "recovered":107166
+    "deaths":1953
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    "West Bengal":{
+    "lat":"23.814082"
+    "long":"87.979803"
+    "confirmed":688956
+    "recovered":614750
+    "deaths":10710
+    "updated":"2021/04/22 08:20:54+00"
+    }
+    }

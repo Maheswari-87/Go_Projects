@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table style="width:100%">
+            <h1><u>Covid Cases</u></h1>
+            <h2>Place:{{.Country}}</h2>
+            <tr>
+              <th>Confirmed</th>
+              <th>Recovered</th>
+              <th>Deaths</th>
+            </tr>
+            <tr>
+              <td>{{.Confirmed}}</td>
+              <td>{{.Recovered}}</td>
+              <td>{{.Deaths}}</td>
+            </tr>
+        </table>
+    </body>
+</html>

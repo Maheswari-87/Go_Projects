@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSVToHTML</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <script type="text/javascript">
+        function PickCSVFile() {
+            var MyFileOpenPicker = new Windows.Storage.Pickers.FileOpenPicker();
+            MyFileOpenPicker.fileTypeFilter.append(".csv");
+            var OutputTableRows = "";
+            MyFileOpenPicker.pickSingleFileAsync().then(
+                function (CSVFile) {
+                    if (!CSVFile) return;
+                    Windows.Storage.FileIO.readTextAsync(CSVFile).then(
+                        function (CSVText) {
+                            if (!CSVText) return;
+                            var CSVLines = CSVText.split("\r\n");
+                            for (var i = 0; i < CSVLines.length; i++) {
+                                OutputTableRows += "<tr>";
+                                var CSVValues = CSVLines[i].split(",");
+                                for (var j = 0; j < CSVValues.length; j++) {
+                                    OutputTableRows += "<td>" + CSVValues[j] + "</td>";
+                                }
+                                OutputTableRows += "</tr>";
+                            }
+                            document.getElementById("OutputTable").innerHTML = OutputTableRows;
+                        });
+                });
+        }
+    </script>
+</head>
+<body style="color: white">
+    <button onclick="PickCSVFile()" style="color: white" >Click here</button>
+    <table id="OutputTable" style="color: white" border="1">
+        
+    </table>
+</body>
+</html>
