@@ -55,11 +55,12 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	var Confirmed float64
 	var Recovered float64
 	var Deaths float64
-	//p2, err := template.ParseFiles("html/headers.html")
-	//if err != nil {
-	//	panic(err)
-	//}
-	//p2.Execute(w, "HI")
+	p2, err := template.ParseFiles("html/headers.html")
+	if err != nil {
+		panic(err)
+	}
+	p2.Execute(w, "HI")
+	//flag := 0
 	for _, i := range keys {
 		state := responseObject[i].(map[string]interface{})
 		for key, value := range state {
@@ -98,24 +99,24 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatalln(err)
 		}
+
 		//s := []float64{Confirmed, Recovered, Deaths}
 		//var s []float64 =abc(Confirmed,Recovered,Deaths)
 		//p1.Execute(w, s)
-
+		p1, err := template.ParseFiles("html/new.html")
+		//data1 := Data{i, Confirmed, Recovered, Deaths}
+		data1 := Data{i, s, t, u}
+		if err != nil {
+			panic(err)
+		}
+		p1.Execute(w, data1)
 	}
-	p1, err := template.ParseFiles("html/first.html")
-	//data1 := Data{i, Confirmed, Recovered, Deaths}
-	//data1 := Data{i, s, t, u}
-	if err != nil {
-		panic(err)
-	}
-	p1.Execute(w, "Hi")
 
 }
 
 func handleRequests() {
 	http.HandleFunc("/", homePage)
-	log.Fatal(http.ListenAndServe(":7026", nil))
+	log.Fatal(http.ListenAndServe(":7041", nil))
 }
 func main() {
 	handleRequests()
@@ -144,15 +145,6 @@ func main() {
 	//	fmt.Println(key, value.(string))
 	//}
 	//handleRequests()
-	fmt.Printf("India:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.All.Confirmed, responseObject.All.Recovered, responseObject.All.Confirmed-responseObject.All.Recovered, responseObject.All.Deaths)
-	fmt.Printf("\n\nAndaman:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.Andaman.Confirmed, responseObject.Andaman.Recovered, responseObject.Andaman.Confirmed-responseObject.Andaman.Recovered, responseObject.Andaman.Deaths)
-	fmt.Printf("\n\nAndhra:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.Andhra.Confirmed, responseObject.Andhra.Recovered, responseObject.Andhra.Confirmed-responseObject.Andhra.Recovered, responseObject.Andhra.Deaths)
-	fmt.Printf("\n\nArunachal pradesh:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.Arunachal.Confirmed, responseObject.Arunachal.Recovered, responseObject.Arunachal.Confirmed-responseObject.Arunachal.Recovered, responseObject.Arunachal.Deaths)
-	fmt.Printf("\n\nAssam:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.Assam.Confirmed, responseObject.Assam.Recovered, responseObject.Assam.Confirmed-responseObject.Assam.Recovered, responseObject.Assam.Deaths)
-	fmt.Printf("\n\nBihar:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.Bihar.Confirmed, responseObject.Bihar.Recovered, responseObject.Bihar.Confirmed-responseObject.Bihar.Recovered, responseObject.Bihar.Deaths)
-	fmt.Printf("\n\nChandigarh:\nConfirmed cases %v,\nRecovered cases %v,\nActive cases %v,\nDeaths %v.", responseObject.Chandigarh.Confirmed, responseObject.Chandigarh.Recovered, responseObject.Chandigarh.Confirmed-responseObject.Chandigarh.Recovered, responseObject.Chandigarh.Deaths)
-
-	//fmt.Println(len(responseObject.IndianStates))
 }*/
 
 //out := Andaman1{Confirmed: responseObject.Andaman.Confirmed, Recovered: responseObject.Andaman.Recovered, Deaths: responseObject.Andaman.Deaths}
