@@ -205,7 +205,7 @@ func countryCovid(w http.ResponseWriter, r *http.Request) {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-	homePage, err := template.ParseFiles("html/new.html")
+	homePage, err := template.ParseFiles("html/home.html")
 	if err != nil {
 		panic(err)
 	}
@@ -217,7 +217,7 @@ func handleRequests() {
 	http.HandleFunc("/IndiaStates", stateCovid)
 	http.HandleFunc("/Worldwide", countryCovid)
 	//http.HandleFunc("/3", VaccinatedDetails)
-	log.Fatal(http.ListenAndServe(":6018", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }
 func main() {
 	handleRequests()
