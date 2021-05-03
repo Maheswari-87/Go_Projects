@@ -27,11 +27,6 @@ type Country struct {
 	Recovered    string
 	Deaths       string
 }
-type Vaccine struct {
-	Vaccinated string
-	Country    string
-	Population string
-}
 
 func stateCovid(w http.ResponseWriter, r *http.Request) {
 	response, err := http.Get("https://covid-api.mmediagroup.fr/v1/cases?country=India") //Get json data from api
