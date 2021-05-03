@@ -200,7 +200,7 @@ func countryCovid(w http.ResponseWriter, r *http.Request) {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-	homePage, err := template.ParseFiles("html/new.html")
+	homePage, err := template.ParseFiles("html/home.html")
 	if err != nil {
 		panic(err)
 	}
