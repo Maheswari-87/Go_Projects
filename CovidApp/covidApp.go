@@ -19,6 +19,7 @@ type Data struct {
 	Confirmed string
 	Recovered string
 	Deaths    string
+	Updated   string
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
@@ -55,6 +56,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	var Confirmed float64
 	var Recovered float64
 	var Deaths float64
+	var Updated string
 	p2, err := template.ParseFiles("html/headers.html")
 	if err != nil {
 		panic(err)
@@ -73,6 +75,10 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 			if key == "deaths" && value != nil {
 				Deaths = value.(float64)
 			}
+			if key == "updated" && value != nil {
+				Updated = value.(string)
+			}
+
 		}
 		fmt.Println(i)
 		fmt.Println(Confirmed)
@@ -103,9 +109,9 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 		//s := []float64{Confirmed, Recovered, Deaths}
 		//var s []float64 =abc(Confirmed,Recovered,Deaths)
 		//p1.Execute(w, s)
-		p1, err := template.ParseFiles("html/new.html")
+		p1, err := template.ParseFiles("html/states.html")
 		//data1 := Data{i, Confirmed, Recovered, Deaths}
-		data1 := Data{i, s, t, u}
+		data1 := Data{i, s, t, u, Updated}
 		if err != nil {
 			panic(err)
 		}
@@ -116,7 +122,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 
 func handleRequests() {
 	http.HandleFunc("/", homePage)
-	log.Fatal(http.ListenAndServe(":7041", nil))
+	log.Fatal(http.ListenAndServe(":7044", nil))
 }
 func main() {
 	handleRequests()

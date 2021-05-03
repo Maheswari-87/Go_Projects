@@ -26,7 +26,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 nav {
-  background: #fe9a99;
+  position:absolute;
+  background:#FFFFFF;
+  box-shadow: 0px 4px 10 px
+    rgba(0,0,0,0.25);
   height: 10vh;
   width: 100%;
   display: flex;
@@ -34,8 +37,9 @@ nav {
   padding-right: 60px;
 }
 .logo {
-  flex: 1;
-  margin-left: 40px;
+  flex: 0.5;
+  margin-left: 10px;
+  
 }
 
 .logo h1 {
@@ -60,11 +64,11 @@ nav {
 }
 
 .link:hover {
-  color: #ba4c4a;
+  color:firebrick;
 }
 
 .main {
-  background:darkgrey;
+  background:#FFFFFF;
   height: 90vh;
   display: flex;
   justify-content: space-evenly;
@@ -89,32 +93,39 @@ nav {
 
 .main-right p {
   font-size: 30px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .text {
   margin-left: 18%;
-  padding-top: 32%;
+  padding-top: 20%;
 }
 
 .text span {
-  font-size: 7vw;
-  letter-spacing: 25px;
-  font-weight: bold;
+  font-size: 5vw;
+  letter-spacing: 5px;
+  
+  color:firebrick;
+}
+.text span1 {
+  font-size: 3vw;
+  letter-spacing: 1px;
+  
+  color:black;
 }
 
 .text p {
-  padding-top: 18px;
-  font-weight: bold;
+  padding-top: 10px;
+
   letter-spacing: 1px;
   line-height: 25px;
-}
+} 
 
 .right-bar {
   position: absolute;
   width: 60px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background:#FFFFFF;
   top: 0;
   right: 0;
   display: flex;
@@ -146,7 +157,10 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+#logo { 
+  float: left;
+  display: inline-block;
+}
 .search {
   position: absolute;
   color: white;
@@ -154,29 +168,131 @@ nav {
   font-size: 20px;
 }
 
+
+#covid{
+  padding-left: 5px;
+  height:90px;
+  width:200px;
+  margin-bottom: 10px;
+}
+#world{
+  text-align: center;
+  float: left;
+  height:20px;
+  width:40px;
+}
+#india{
+  text-align: center;
+  float: left;
+  height:20px;
+  width:40px;
+}
+#vaccine{
+  position: relative;
+  text-align: left;
+  float: left;
+  height:20px;
+  width:50px;
+}
+.button{
+ 
+  background-color: white; /* Green */
+  border: none;
+  color: white;
+  background-color: firebrick;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 40px;
+  border-top:1px solid firebrick;
+  border-right:1px solid firebrick;
+  border-bottom:1px solid firebrick;
+  border-left:1px solid firebrick;
+  width:110px;
+ height:25px;
+ text-align:center;
+ line-height:1.em;
+ font-size:1.1em;
+
+}
+.button1:hover {
+  text-align: center;
+  background-color: white;
+  color: firebrick;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
       </style>
       <link rel="stylesheet" href="style.css" />
   
       <title>COVID-19</title>
     </head>
     <body>
-      <h2 id="About_corona"></h2>
+      <!--<h2 id="About_corona"></h2>
       <p class="main-content">
         corona
-      </p>
+      </p>-->
+      <div id="nav">
+        <img src="img\Logo.png" id="logo"  />
       <header>
         <nav>
+          <div class="logo">
+            <img id="covid" src="https://th.bing.com/th/id/OIP.pl8RB1omR5pvs26dlfv5CAHaHa?pid=ImgDet&w=800&h=800&rs=1" />
+          </div>
           <div class="logo"><h1>COVID-19</h1></div>
           <ul class="list-items">
             <li class="list"><a href="new.html" class="link">HOME</a></li>
   
-            <li class="list"><a href="https://www.indushealthplus.com/corona-virus-symptoms-prevention-treatment.html" class="link">About</a></li>
+            <li class="list"><a href="https://www.mohfw.gov.in/pdf/FAQ.pdf" class="link">SYMPTOMS</a></li>
   
-            <li class="list"><a href="https://www.worldometers.info/coronavirus/?utm_campaign=homeAdvegas1?" class="link">Statistics</a></li>
+            <li class="list"><a href="https://www.worldometers.info/coronavirus/?utm_campaign=homeAdvegas1?" class="link">STATISTICS</a></li>
   
             <li class="list"><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019?gclid=EAIaIQobChMIquqd2bCg8AIVTraWCh1yrww_EAAYASAAEgIAJfD_BwE" class="link">WHO</a></li>
   
-            <li class="list"><a href="#" class="link">Contact</a></li>
+            <!--<li class="list"><a href="#" class="link">CONTACT</a></li>-->
           </ul>
         </nav>
         <div class="main">
@@ -184,8 +300,26 @@ nav {
             <div class="text">
               <span>Corona</span>
               <p>
-                Coronavirus disease 2019 (COVID-19) is caused by a new coronavirus first identified in Wuhan, China, in December 2019. Because it is a new virus, scientists are learning more each day. Although most people who have COVID-19 have mild symptoms, COVID-19 can also cause severe illness and even death
-              </p>
+                Coronavirus disease 2019 (COVID-19) is caused by a new coronavirus first identified in Wuhan, China, in December 2019. Most people who have COVID-19 have mild symptoms, like Cough, fever, Aches and pains... COVID-19 can also cause severe illness and even death,
+              </p><br><br>
+              <span1>COVID-19 cases</span1><br><br>
+              <a href="/Worldwide" class="button button1">World
+                <!--<img id="world" src="https://images-na.ssl-images-amazon.com/images/I/41ihrDXyrwL.png" alt="Worldwide">-->
+              </a>
+              <a href="/IndiaStates" class="button button1">India
+                <!--<img id="india" src="https://image.shutterstock.com/image-vector/india-map-red-color-260nw-604375547.jpg" alt="India">-->
+              </a>
+              <div class="dropdown">
+                <button class="button button1">Vaccines
+                 <!-- <img id="vaccine" src="https://image.shutterstock.com/image-photo/vial-covid-19-vaccine-isolated-260nw-1933701881.jpg" alt="India">-->
+                </button>
+                <div class="dropdown-content">
+                <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/Pfizer-BioNTech.html">BioNTech</a>
+                <a href="https://www.bharatbiotech.com/covaxin.html">Covaxin</a>
+                <a href="https://en.wikipedia.org/wiki/Oxford%E2%80%93AstraZeneca_COVID-19_vaccine">Oxford–AstraZeneca</a>
+                </div>
+              </div>
+              
             </div>
           </div>
           <div class="main-right">
@@ -194,20 +328,18 @@ nav {
               src="http://www.pngall.com/wp-content/uploads/4/Coronavirus-Germs-PNG-File.png"
               alt=""
             />
-            <p>COVID-19</p>
-            <a href="/1">Global cases</a>
-            <a href="/2">India cases</a>
+           
           </div>
         </div>
-        <!--<div class="right-bar">
-          <a class="search" href="https://www.youtube.com/channel/UCajx87zA4Dr7rmkM7leU22w"><i class="fas fa-search"></i></a>
+        <div class="right-bar">
+          <a class="search" href="https://www.google.com/"><i class="fas fa-search"></i></a>
           <div class="icons">
-            <a href="https://www.youtube.com/channel/UCajx87zA4Dr7rmkM7leU22w" class="icon-btn"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.youtube.com/watch?v=i0ZabxXmH4Y" class="icon-btn"><i class="fab fa-youtube"></i></a>
             <a href="#" class="icon-btn"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/channel/UCajx87zA4Dr7rmkM7leU22w" class="icon-btn"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.youtube.com/channel/UCajx87zA4Dr7rmkM7leU22w" class="icon-btn"><i class="fab fa-facebook"></i></a>
+            <a href="https://gadgets.ndtv.com/apps/news/twitter-covid-19-vaccine-information-fact-box-timeline-new-feature-coronavirus-india-2422972" class="icon-btn"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/coronavirus_info/" class="icon-btn"><i class="fab fa-facebook"></i></a>
           </div>
-        </div>-->
+        </div>
       </header>
       <section></section>
     </body>

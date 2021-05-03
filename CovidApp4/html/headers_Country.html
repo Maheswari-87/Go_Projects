@@ -5,7 +5,10 @@
     position: relative;
     }
     nav {
-  background: #fe9a99;
+  position:absolute;
+  background:ivory;
+  box-shadow: 0px 4px 10 px
+    rgba(0,0,0,0.25);
   height: 10vh;
   width: 100%;
   display: flex;
@@ -27,35 +30,54 @@
   font-weight: bold;
   transition: 0.4s background;
 }
+.logo {
+  flex: 0.5;
+  margin-left: 10px;
+  
+}
+#covid{
+  padding-left: 5px;
+  height:90px;
+  width:200px;
+  margin-bottom: 10px;
+}
 
 .link:hover {
-  color: #ba4c4a;
+  color:firebrick;
 }
     </style>
     <header>
-        <nav>
-          <div class="logo"><h1>COVID-19</h1></div>
-          <ul class="list-items">
-            <li class="list"><a href="new.html" class="link">HOME</a></li>
-  
-            <li class="list"><a href="about.html" class="link">About</a></li>
-  
-            <li class="list"><a href="#" class="link">Statistics</a></li>
-  
-            <li class="list"><a href="#" class="link">WHO</a></li>
-  
-            <li class="list"><a href="#" class="link">Contact</a></li>
-          </ul>
-        </nav>
+      <nav>
+        <div class="logo">
+          <img id="covid" src="https://th.bing.com/th/id/OIP.pl8RB1omR5pvs26dlfv5CAHaHa?pid=ImgDet&w=800&h=800&rs=1" />
+        </div>
+        <div class="logo"><h1>COVID-19</h1></div>
+        <ul class="list-items">
+          <li class="list"><a href="new.html" class="link">HOME</a></li>
+
+          <li class="list"><a href="https://www.mohfw.gov.in/pdf/FAQ.pdf" class="link">SYMPTOMS</a></li>
+
+          <li class="list"><a href="https://www.worldometers.info/coronavirus/?utm_campaign=homeAdvegas1?" class="link">STATISTICS</a></li>
+
+          <li class="list"><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019?gclid=EAIaIQobChMIquqd2bCg8AIVTraWCh1yrww_EAAYASAAEgIAJfD_BwE" class="link">WHO</a></li>
+
+          <!--<li class="list"><a href="#" class="link">CONTACT</a></li>-->
+        </ul>
+      </nav>
     </header>
-    <h2 align="center"><u>CovidCases worldwide</u></h2>
-<table cellspacing="0" width="70%" bordercolor="black" border="2" align="center">
+    <br><br><br><br><div align=right border="2">
+      <a href="/IndiaStates" class="link">See India's Covid Cases</a>
+  </div>
+    <h2 align="left">Covid Cases worldwide</h2><br>
+    
+<table cellspacing="0" width="70%" bordercolor="black" border="1" align="center">
 <tr>
-    <th bgcolor="#C0C0C0" width="20%">Country</th>
-    <th bgcolor="#C0C0C0" width="20%">Capital_city</th>
-    <th bgcolor="#C0C0C0" width="20%">Confirmed</th>
-    <th bgcolor="#C0C0C0" width="20%">Recovered</th>
-    <th bgcolor="#C0C0C0" width="20%">Deaths</th>
+    <th bgcolor="#F5F5F5" width="20%" >Country</th>
+    <th bgcolor="#F5F5F5" width="20%">Capital_city</th>
+    <th bgcolor="#F5F5F5" width="15%">Confirmed</th>
+    <th bgcolor="#F5F5F5" width="15%">Recovered</th>
+    <th bgcolor="#F5F5F5" width="10%">Deaths</th>
+    <th bgcolor="#F5F5F5" width="25%">Updated</th>
 
 </tr>
 </table>
