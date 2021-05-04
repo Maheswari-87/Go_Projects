@@ -1,6 +1,7 @@
 package main
 
 import (
+	"CovidApp/util"
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
@@ -24,8 +25,10 @@ type Data struct {
 
 func homePage(w http.ResponseWriter, r *http.Request) {
 	//fmt.Fprintf(w, "homepage")
+	url := util.ReadUrl()
+	response, err := http.Get(url)
 
-	response, err := http.Get("https://covid-api.mmediagroup.fr/v1/cases?country=India")
+	//response, err := http.Get("https://covid-api.mmediagroup.fr/v1/cases?country=India")
 	if err != nil {
 		fmt.Printf("the http request got failed with error %s\n", err)
 	}
@@ -122,7 +125,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 
 func handleRequests() {
 	http.HandleFunc("/", homePage)
-	log.Fatal(http.ListenAndServe(":7044", nil))
+	log.Fatal(http.ListenAndServe(":7050", nil))
 }
 func main() {
 	handleRequests()

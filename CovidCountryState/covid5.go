@@ -121,7 +121,7 @@ func individualStates(w http.ResponseWriter, r *http.Request) {
 	country := r.URL.Query().Get("country")
 	//path:="https://covid-api.mmediagroup.fr/v1/cases?country=?
 	//param := url.QueryEscape(country)
-	//fmt.Println(country)
+	fmt.Println(country)
 	//path := fmt.Sprintf("https://covid-api.mmediagroup.fr/v1/cases?country=?%s", param)
 	response, err := http.Get("https://covid-api.mmediagroup.fr/v1/cases?country=?")
 	if err != nil {
