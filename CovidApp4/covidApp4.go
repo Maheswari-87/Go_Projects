@@ -217,7 +217,7 @@ func handleRequests() {
 	http.HandleFunc("/IndiaStates", stateCovid)
 	http.HandleFunc("/Worldwide", countryCovid)
 	//http.HandleFunc("/3", VaccinatedDetails)
-	log.Fatal(http.ListenAndServe(":8082", nil))
+	log.Fatal(http.ListenAndServe(":8085", nil))
 }
 func main() {
 	handleRequests()

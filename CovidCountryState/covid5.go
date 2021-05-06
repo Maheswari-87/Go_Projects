@@ -48,7 +48,7 @@ func CountryStateCovid(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	var keys []string
-	v.GetObject().Visit(func(key []byte, values *fastjson.Value) {
+	v.GetObject().Visit(func(key []byte, v *fastjson.Value) {
 		keys = append(keys, string(key))
 	})
 	//fmt.Println(keys)
@@ -93,7 +93,7 @@ func CountryStateCovid(w http.ResponseWriter, r *http.Request) {
 		u := strconv.FormatFloat(Deaths, 'f', -1, 64)
 
 		data := []string{i, s, t, u}
-		file := ("C:\\Users\\SRS\\gocode\\src\\workspace\\CovidApp4\\data\\CountryStatedata.csv")
+		file := ("C:\\Users\\SRS\\gocode\\src\\workspace\\CovidCountryState\\data\\CountryStatedata.csv")
 		f, err := os.OpenFile(file, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 		if err != nil {
 			fmt.Println("Error: ", err)
@@ -117,13 +117,10 @@ func CountryStateCovid(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func individualStates(w http.ResponseWriter, r *http.Request) {
-	//CountryUrl:=map[string]interface{}{}
 	country := r.URL.Query().Get("country")
-	//path:="https://covid-api.mmediagroup.fr/v1/cases?country=?
-	//param := url.QueryEscape(country)
 	fmt.Println(country)
 	//path := fmt.Sprintf("https://covid-api.mmediagroup.fr/v1/cases?country=?%s", param)
-	response, err := http.Get("https://covid-api.mmediagroup.fr/v1/cases?country=?")
+	response, err := http.Get("https://covid-api.mmediagroup.fr/v1/cases")
 	if err != nil {
 		fmt.Printf("the http request got failed with error %s\n", err)
 	}
@@ -142,45 +139,61 @@ func individualStates(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	var keys []string
-	v.GetObject().Visit(func(key []byte, values *fastjson.Value) {
+	v.GetObject().Visit(func(key []byte, v *fastjson.Value) {
 		keys = append(keys, string(key))
 	})
 	//fmt.Println(keys)
 	var State string
-	var Confirmed float64
-	var Recovered float64
-	var Deaths float64
+	var Confirmed string
+	var Recovered string
+	var Deaths string
 	p1, err := template.ParseFiles("html/header_State.html")
 	if err != nil {
 		log.Fatalln(err)
 	}
 	p1.Execute(w, "Hi")
 
-	for _, i := range keys {
+	for _, i := range keys { //i having country name ==key
+		all := responseObject[i].(map[string]interface{}) //create another one interface to map with inside valuea and keys
+		for key, value := range all {
+			if i == country { // condition should be satisfied
+				allValues := value.(map[string]interface{}) //create another one
+				/*if key == "All" {
+					continue
+				} else {
+					State = key
+				}*/
+				State = key
+				for key1, value1 := range allValues {
+					if key1 == "confirmed" && value1 != nil {
+						Confirmed = strconv.FormatFloat(value1.(float64), 'f', -1, 64)
+					}
+					if key1 == "recovered" && value1 != nil {
+						Recovered = strconv.FormatFloat(value1.(float64), 'f', -1, 64)
+					}
+					if key1 == "deaths" && value1 != nil {
+						Deaths = strconv.FormatFloat(value1.(float64), 'f', -1, 64)
+					}
 
-		all := responseObject[i].(map[string]interface{})
-		if i != "All" {
-			for key, value := range all {
+				}
+				p1, err := template.ParseFiles("html/stateWise.html")
+				data1 := StateData{State, Confirmed, Recovered, Deaths}
+				if err != nil {
+					panic(err)
+				}
+				p1.Execute(w, data1)
 
-				if key == "confirmed" && value != nil {
-					Confirmed = value.(float64)
-				}
-				if key == "recovered" && value != nil {
-					Recovered = value.(float64)
-				}
-				if key == "deaths" && value != nil {
-					Deaths = value.(float64)
-				}
 			}
+
 		}
 
 		//fmt.Println(State)
-		s := strconv.FormatFloat(Confirmed, 'f', -1, 64)
-		t := strconv.FormatFloat(Recovered, 'f', -1, 64)
-		u := strconv.FormatFloat(Deaths, 'f', -1, 64)
+		//s := strconv.FormatFloat(Confirmed1, 'f', -1, 64)
+		//t := strconv.FormatFloat(Recovered1, 'f', -1, 64)
+		//u := strconv.FormatFloat(Deaths1, 'f', -1, 64)
 
-		data := []string{i, s, t, u}
-		file := ("C:\\Users\\SRS\\gocode\\src\\workspace\\CovidApp4\\data\\CountryStatedata.csv")
+		data := []string{i, Confirmed, Recovered, Deaths}
+		file := ("C:\\Users\\SRS\\gocode\\src\\workspace\\CovidCountryState\\data\\Statedata.csv")
 		f, err := os.OpenFile(file, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 		if err != nil {
 			fmt.Println("Error: ", err)
@@ -195,12 +208,6 @@ func individualStates(w http.ResponseWriter, r *http.Request) {
 			log.Fatalln(err)
 		}
 
-		p1, err := template.ParseFiles("html/stateWise.html")
-		data1 := StateData{State, s, t, u}
-		if err != nil {
-			panic(err)
-		}
-		p1.Execute(w, data1)
 	}
 }
 
@@ -215,7 +222,7 @@ func handleRequests() {
 	http.HandleFunc("/", home)
 	http.HandleFunc("/1", CountryStateCovid)
 	http.HandleFunc("/2", individualStates)
-	log.Fatal(http.ListenAndServe(":6003", nil))
+	log.Fatal(http.ListenAndServe(":6036", nil))
 }
 func main() {
 	handleRequests()
