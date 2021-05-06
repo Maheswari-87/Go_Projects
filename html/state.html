@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Covid Cases of India</title>
+    <style>
+        table,th,td{
+            border:1px solid black;
+        }
+    </style>
+  </head>
+  <body style = background-color:#FFFFFF; margin-left:25px; margin-top:30px>
+      <table cellspacing="0" width="70%" bordercolor="black" border="2" align="center">
+       <!--<h3 align="center">Covid Cases of:{{.State}}</h3>
+      <tr>
+            <th bgcolor="#C0C0C0">Place</th>
+            <th bgcolor="#C0C0C0">Confirmed</th>
+            <th bgcolor="#C0C0C0">Recovered</th>
+            <th bgcolor="#C0C0C0">Deaths</th>
+
+        </tr>-->
+    
+        <tr>
+            <td width="20%">{{.State}}</td>
+            <td width="20%">{{.Confirmed}}</td>
+            <td width="20%">{{.Recovered}}</td>
+            <td width="20%">{{.Deaths}}</td>
+        </tr>
+      
+    
+    </table>
+  </body>
